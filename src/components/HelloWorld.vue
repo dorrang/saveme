@@ -10,7 +10,7 @@
  <div class="text-container">
  <h2 class="title">טוב לראות אותך<br> ב- SaveMe!</h2>
  <p>חיסכון בכסף קטן צומח ויגשים לכם <br> חלומות טובים - זה קל ומהנה!</p>
- <div class="btn">מתחילים</div>
+ <div class="btn" @click="getStarted">מתחילים</div>
  </div>
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+      getStarted() {
+      this.$router.push(`/get-started`);
+    },
   }
 }
 </script>

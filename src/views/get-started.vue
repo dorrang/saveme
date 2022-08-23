@@ -12,7 +12,7 @@
         </p>
 
         <p class="err-code" @click="getCode()">לא קיבלתי קוד</p>
-        <div class="btn">המשך</div>
+        <div class="btn" @click="next()">המשך</div>
       </div>
     </div>
 
@@ -47,21 +47,34 @@
       </form>
       <div class="btn" @click="getCode()">שלחו לי קוד</div>
     </div>
+
+    <pref v-if="showPref" />
   </div>
 </template>
 
 <script>
+import pref from "@/components/pref.vue";
+
 export default {
+  components: { pref },
   name: "get-started",
   data() {
     return {
       gotCode: false,
       phoneNum: "058-****908",
+      showPref: false,
     };
   },
   methods: {
     getCode() {
       this.gotCode = !this.gotCode;
+
+      if (this.showPref) {
+        this.next();
+      }
+    },
+    next() {
+      this.showPref = !this.showPref;
     },
   },
 };

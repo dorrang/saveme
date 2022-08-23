@@ -13,14 +13,20 @@
         <input class="txt-input" type="number" name="" />
         <input class="txt-input" type="number" name="" />
 
-        <p>איך לשלוח לך קוד הזדהות?</p>
+        <h4>איך לשלוח לך קוד הזדהות?</h4>
         <div class="radio">
-          <input class="radio-btn" type="radio" name="" value="sms" />
-          <label for="">SMS</label>
-          <input class="radio-btn" type="radio" name="" value="email" />
-          <label for="">אימייל</label>
-          <input class="radio-btn" type="radio" name="" value="voicemsg" />
-          <label for="">מענה קולי</label>
+          <div>
+            <input class="radio-btn" type="radio" name="" value="sms" />
+            <label for="">SMS</label>
+          </div>
+          <div>
+            <input class="radio-btn" type="radio" name="" value="email" />
+            <label for="">אימייל</label>
+          </div>
+          <div>
+            <input class="radio-btn" type="radio" name="" value="voicemsg" />
+            <label for="">מענה קולי</label>
+          </div>
         </div>
       </form>
 

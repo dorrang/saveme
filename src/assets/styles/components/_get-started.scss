@@ -2,7 +2,13 @@
 
     margin-top: 80px;
 
+    :not(.partitioned) {
+        text-align: right;
+
+    }
+
     .partitioned {
+        // text-align: center;
         font-family: 'Arimo';
         font-style: normal;
         font-weight: 400;
@@ -15,6 +21,7 @@
         padding-top: 15px;
         padding-left: 22px;
         letter-spacing: 33px;
+        margin-bottom: 35px;
 
         border: 0;
         background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
@@ -25,6 +32,36 @@
         height: 60px;
         width: 270px;
         min-width: 220px;
+    }
+
+    .txt {
+        font-family: 'Arimo';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 18px;
+        margin: 15px;
+
+    }
+
+    .err-code {
+        display: flex;
+        color: #6A4DEC;
+        font-family: 'Arimo';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        text-align: right;
+        margin: 15px;
+        margin-bottom: 90px;
+        margin-top: 160px;
+        text-decoration: none;
+
+        :hover {
+            cursor: pointer;
+        }
+
     }
 }
 
@@ -97,6 +134,15 @@
             margin: 15px;
             border: 1.5px solid #DBD5E0;
             border-radius: 4px;
+            font-family: 'Arimo';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            /* identical to box height, or 150% */
+            padding-right: 15px;
+            text-align: right;
+            letter-spacing: 0.15px;
 
         }
 

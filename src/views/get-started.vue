@@ -4,8 +4,15 @@
 
     <div v-if="gotCode" class="get-container">
       <div class="code-container">
-        <p>נא להזין את הקוד שהתקבל</p>
+        <p class="title">נא להזין את הקוד שהתקבל</p>
         <input class="partitioned" type="text" maxlength="6" autofocus />
+        <p class="txt">הקוד נשלח למספר:</p>
+        <p class="ltr txt">
+          {{ phoneNum }}
+        </p>
+
+        <p class="err-code" @click="getCode()">לא קיבלתי קוד</p>
+        <div class="btn">המשך</div>
       </div>
     </div>
 
@@ -20,7 +27,7 @@
         <p class="txt-lable">ת.ז /דרכון</p>
         <input class="txt-input" type="number" name="" />
         <p class="txt-lable">6 ספרות אחרונות של כרטיס ישראכרט</p>
-        <input class="txt-input" type="number" name="" />
+        <input class="txt-input" type="text" maxlength="6" name="" />
 
         <h4>איך לשלוח לך קוד הזדהות?</h4>
         <div class="radio">
@@ -49,6 +56,7 @@ export default {
   data() {
     return {
       gotCode: false,
+      phoneNum: "058-****908",
     };
   },
   methods: {

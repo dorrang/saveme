@@ -1,17 +1,13 @@
 .pref-container {
     height: 93%;
     bottom: 0%;
-
     width: 100%;
-
-
     font-family: 'Arimo';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
     /* identical to box height, or 112% */
-
     text-align: right;
     position: absolute;
     background: #FFFFFF;
@@ -46,6 +42,11 @@
 
         }
 
+        .content-container {
+            margin-top: 25px;
+
+        }
+
         .content-container:not(:last-child) {
             margin-bottom: 25px;
 
@@ -55,10 +56,12 @@
             display: flex;
             align-items: center;
 
-            :not(:last-of-type(label)) {
 
-                padding-bottom: 25px;
-            }
+            // :not(:last-of-type(label)) {
+            //     margin-bottom: 20px;
+
+            //     padding-bottom: 25px;
+            // }
 
 
             p {
@@ -95,7 +98,7 @@
     }
 
     .btn {
-        margin-top: 125px;
+        margin-top: 60px;
 
     }
 

@@ -47,7 +47,7 @@
         <div class="content-container">
           <div class="section-container">
             <input type="checkbox" class="checkbox" checked />
-            <label>הנחות במעמד החיוב. <a href="">קרא עוד +</a></label>
+            <p>הנחות במעמד החיוב. <a href="">קרא עוד +</a></p>
           </div>
         </div>
       </div>

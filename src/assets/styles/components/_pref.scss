@@ -49,19 +49,14 @@
 
         .content-container:not(:last-child) {
             margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
 
         }
 
         .section-container {
             display: flex;
             align-items: center;
-
-
-            // :not(:last-of-type(label)) {
-            //     margin-bottom: 20px;
-
-            //     padding-bottom: 25px;
-            // }
 
 
             p {

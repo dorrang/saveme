@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import getStarted from '../views/get-started.vue'
+import events from '../views/events.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/get-started',
     name: 'Get Started',
     component: getStarted
+  },
+  {
+    path: '/events',
+    name: 'Events',
+    component: events
   }
 ]
 

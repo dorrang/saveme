@@ -1,0 +1,29 @@
+.account-container {
+
+    .account-total {
+        color: white;
+        font-family: 'Fredoka';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: center;
+        letter-spacing: 0.02em;
+
+        p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+
+        }
+
+    }
+
+    .trans-list {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+}

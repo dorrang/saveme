@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import getStarted from '../views/get-started.vue'
 import events from '../views/events.vue'
+import account from '../views/my-account.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/events',
     name: 'Events',
     component: events
+  },
+  {
+    path: '/account',
+    name: 'Account',
+    component: account
   }
 ]
 

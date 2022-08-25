@@ -8,12 +8,13 @@
     </div>
     <table class="trans-list">
       <tr v-for="trans in account.transList" :key="trans.transId">
-        <td>{{ trans.date }}</td>
-        <td>{{ trans.amount }}</td>
-        <td class="edit-section">
-          <!-- <button><router-link :toy="toy" :to="'/toy/details/'+toy._id">Details</router-link></button>
-            <button><router-link :to="'/toy/edit/'+toy._id">Edit</router-link></button>
-            <button @click="removeToy(toy._id)">Remove</button> -->
+        <td class="date">{{ trans.date }}</td>
+        <td class="amount">
+          {{ trans.amount }}
+          <span style="font-size: small">₪</span>
+        </td>
+        <td class="pointer edit-section">
+          <img src="../assets/imgs/v-arrow.png" alt="" />
         </td>
       </tr>
     </table>
@@ -31,10 +32,16 @@ export default {
   name: "account",
   data() {
     return {
-      accountTotal: "₪23,567",
+      accountTotal: "23,567",
       account: {
-        total: "₪23,567",
+        total: "23,567",
         transList: [
+          {
+            transId: 0,
+            date: "אוגוסט 2021",
+            amount: "135",
+          },
+
           {
             transId: 1,
             date: "06/08/21",
@@ -50,15 +57,16 @@ export default {
             date: "14/08/21",
             amount: "12",
           },
+
           {
             transId: 4,
-            date: "14/08/21",
-            amount: "24",
+            date: "יולי 2021",
+            amount: "223",
           },
           {
             transId: 5,
-            date: "17/08/21",
-            amount: "8",
+            date: "14/08/21",
+            amount: "24",
           },
           {
             transId: 6,
@@ -69,6 +77,11 @@ export default {
             transId: 7,
             date: "21/08/21",
             amount: "24",
+          },
+          {
+            transId: 8,
+            date: "17/08/21",
+            amount: "12",
           },
         ],
       },

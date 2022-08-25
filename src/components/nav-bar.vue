@@ -1,7 +1,7 @@
 <template>
   <div class="nav-container">
     <div class="nav-cell">
-      <img src="../assets/imgs/arrow-icon.png" alt="" />
+      <img class="invst" src="../assets/imgs/arrow-icon.png" alt="" />
       <p>השקעות</p>
     </div>
     <div class="nav-cell">

@@ -15,7 +15,7 @@
       <p class="txt-lable">למתי צריך את הכסף</p>
       <input class="txt-input" type="month" placeholder="חודש / שנה" name="" />
     </form>
-    <div class="btn">שמור יעד</div>
+    <div class="btn" @click="getStarted()">שמור יעד</div>
   </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
     return {
       newEv: {},
     };
+  },
+  methods: {
+    getStarted() {
+      this.$router.push(`/account`);
+    },
   },
   mounted() {
     console.log(this.ev);

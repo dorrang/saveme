@@ -52,7 +52,7 @@
         </div>
       </div>
     </form>
-    <div class="btn">המשך</div>
+    <div class="btn" @click="getStarted()">המשך</div>
   </div>
 </template>
 
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     getStarted() {
-      this.$router.push(`/get-started`);
+      this.$router.push(`/events`);
     },
   },
 

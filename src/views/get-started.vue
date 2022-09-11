@@ -30,30 +30,48 @@
           type="text"
           name=""
           maxlength="8"
-          :value="passportLength"
+          inputmode="numeric"
+          v-model="passportLength"
+          :style="{ 'border-color': passColor }"
+          placeholder=""
+          @change="colorErr('pass')"
         />
         <p class="txt-lable">6 ספרות אחרונות של כרטיס ישראכרט</p>
         <input
           class="txt-input"
           type="text"
           maxlength="6"
-          name=""
-          :value="cardLength"
-          :style="{ 'border-color': borderColor }"
+          placeholder=""
+          pattern="[0-9]{6}"
+          inputmode="numeric"
+          v-model="cardLength"
+          :style="{ 'border-color': cardColor }"
+          @change="colorErr('card')"
         />
 
         <h4>איך לשלוח לך קוד הזדהות?</h4>
         <div class="radio">
           <div>
-            <input class="radio-btn" type="radio" name="" value="sms" checked />
+            <input
+              class="radio-btn"
+              type="radio"
+              name="method"
+              value="sms"
+              checked
+            />
             <label for="">SMS</label>
           </div>
           <div>
-            <input class="radio-btn" type="radio" name="" value="email" />
+            <input class="radio-btn" type="radio" name="method" value="email" />
             <label for="">אימייל</label>
           </div>
           <div>
-            <input class="radio-btn" type="radio" name="" value="voicemsg" />
+            <input
+              class="radio-btn"
+              type="radio"
+              name="method"
+              value="voicemsg"
+            />
             <label for="">מענה קולי</label>
           </div>
         </div>
@@ -76,29 +94,51 @@ export default {
       gotCode: false,
       phoneNum: "058-****908",
       showPref: false,
-      borderColor: "#DBD5E0",
+      passColor: "#DBD5E0",
+      cardColor: "#DBD5E0",
       passportLength: "",
       cardLength: "",
+      isErr: false,
     };
   },
   methods: {
     getCode() {
-      this.gotCode = !this.gotCode;
-
-      if (this.showPref) {
-        this.next();
+      if (this.isErr) {
+        return;
+      } else {
+        if (this.showPref) {
+          this.next();
+        }
       }
+      this.gotCode = !this.gotCode;
+      console.log(this.isErr);
     },
     next() {
       this.showPref = !this.showPref;
     },
-    colorErr() {
-      console.log(this.cardLength);
-      console.log(this.passportLength);
-      if (this.cardLength < 5) {
-        this.borderColor = "red";
-      } else {
-        this.borderColor = "#DBD5E0";
+    colorErr(val) {
+      switch (val) {
+        case "card":
+          if (this.cardLength.length <= 5) {
+            this.borderColor = "red";
+            this.isErr = true;
+          } else {
+            this.borderColor = "#DBD5E0";
+            this.isErr = false;
+          }
+          this.cardColor = this.borderColor;
+          break;
+
+        case "pass":
+          if (this.passportLength.length <= 7) {
+            this.borderColor = "red";
+            this.isErr = true;
+          } else {
+            this.borderColor = "#DBD5E0";
+            this.isErr = false;
+          }
+          this.passColor = this.borderColor;
+          break;
       }
     },
   },

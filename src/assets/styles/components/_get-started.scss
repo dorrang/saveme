@@ -130,6 +130,10 @@
         display: flex;
         flex-direction: column;
 
+        .txt-input:invalid {
+            border: red solid 1px;
+        }
+
         .txt-input {
             width: 334px;
             height: 56px;

@@ -98,12 +98,17 @@ export default {
       cardColor: "#DBD5E0",
       passportLength: "",
       cardLength: "",
-      isErr: false,
+      isCardErr: false,
+      isPassErr: false,
     };
   },
   methods: {
     getCode() {
-      if (this.isErr) {
+      if (
+        this.isCardErr ||
+        this.isPassErr ||
+        (this.isCardErr && this.isPassErr)
+      ) {
         return;
       } else {
         if (this.showPref) {
@@ -121,10 +126,10 @@ export default {
         case "card":
           if (this.cardLength.length <= 5) {
             this.borderColor = "red";
-            this.isErr = true;
+            this.isCardErr = true;
           } else {
             this.borderColor = "#DBD5E0";
-            this.isErr = false;
+            this.isCardErr = false;
           }
           this.cardColor = this.borderColor;
           break;
@@ -132,10 +137,10 @@ export default {
         case "pass":
           if (this.passportLength.length <= 7) {
             this.borderColor = "red";
-            this.isErr = true;
+            this.isPassErr = true;
           } else {
             this.borderColor = "#DBD5E0";
-            this.isErr = false;
+            this.isPassErr = false;
           }
           this.passColor = this.borderColor;
           break;

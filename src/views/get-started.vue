@@ -25,14 +25,27 @@
       </p>
       <form class="auth-form">
         <p class="txt-lable">ת.ז /דרכון</p>
-        <input class="txt-input" type="number" name="" />
+        <input
+          class="txt-input"
+          type="text"
+          name=""
+          maxlength="8"
+          :value="passportLength"
+        />
         <p class="txt-lable">6 ספרות אחרונות של כרטיס ישראכרט</p>
-        <input class="txt-input" type="text" maxlength="6" name="" />
+        <input
+          class="txt-input"
+          type="text"
+          maxlength="6"
+          name=""
+          :value="cardLength"
+          :style="{ 'border-color': borderColor }"
+        />
 
         <h4>איך לשלוח לך קוד הזדהות?</h4>
         <div class="radio">
           <div>
-            <input class="radio-btn" type="radio" name="" value="sms" />
+            <input class="radio-btn" type="radio" name="" value="sms" checked />
             <label for="">SMS</label>
           </div>
           <div>
@@ -63,6 +76,9 @@ export default {
       gotCode: false,
       phoneNum: "058-****908",
       showPref: false,
+      borderColor: "#DBD5E0",
+      passportLength: "",
+      cardLength: "",
     };
   },
   methods: {
@@ -75,6 +91,15 @@ export default {
     },
     next() {
       this.showPref = !this.showPref;
+    },
+    colorErr() {
+      console.log(this.cardLength);
+      console.log(this.passportLength);
+      if (this.cardLength < 5) {
+        this.borderColor = "red";
+      } else {
+        this.borderColor = "#DBD5E0";
+      }
     },
   },
 };

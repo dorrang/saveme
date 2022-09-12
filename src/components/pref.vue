@@ -17,11 +17,11 @@
             <p for="round-up">עיגול כלפי מעלה בכל חיוב</p>
           </div>
           <div class="round-up">
-            <input class="radio-btn" type="radio" name="2" />
+            <input class="radio-btn" type="radio" name="amount" />
             <label for="2">2 ש"ח</label>
-            <input class="radio-btn" type="radio" name="5" checked />
+            <input class="radio-btn" type="radio" name="amount" checked />
             <label for="5">5 ש"ח</label>
-            <input class="radio-btn" type="radio" name="10" />
+            <input class="radio-btn" type="radio" name="amount" />
             <label for="10">10 ש"ח</label>
           </div>
         </div>
